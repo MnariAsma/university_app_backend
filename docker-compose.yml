@@ -16,8 +16,9 @@ services:
       context: ../university_app_frontend
     container_name: university_frontend
     ports:
-      - "8080:80"
+      - "5173:5173"
     working_dir: /app
     volumes:
       - ../university_app_frontend:/app
+    command: ["pnpm", "run", "preview", "--", "--host"]
     depends_on: []
